@@ -1,15 +1,15 @@
 const container = document.getElementById("container");
 container.style.display = "flex";
-container.style.width = "500px";
-container.style.height = "500px";
+container.style.flexWrap = "wrap";
+container.style.width = "100%";
+container.style.aspectRatio = "1 / 1";
 let tempDoc = document.createDocumentFragment();
 for(let i=0; i<16;i++){
 let gridDiv = document.createElement('div');
-// gridDiv.style.display = "flex";
-gridDiv.style.flex = "1";
-gridDiv.style.width = "25px";
-gridDiv.style.height = "25px";
-gridDiv.style.margin = "1px";
+// gridDiv.style.flex = "1";
+gridDiv.style.width = "25%";
+gridDiv.style.height = "25%";
+gridDiv.style.margin = "-1px";
 gridDiv.style.border = "1px solid magenta"
 tempDoc.appendChild(gridDiv);
 
