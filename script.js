@@ -12,7 +12,9 @@ gridDiv.style.height = "25%";
 gridDiv.style.margin = "-1px";
 gridDiv.style.border = "1px solid magenta"
 tempDoc.appendChild(gridDiv);
-
+gridDiv.addEventListener("mouseover", function () {
+gridDiv.style.backgroundColor = "magenta";
+});
 }
 container.appendChild(tempDoc);
 
