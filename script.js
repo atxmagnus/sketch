@@ -1,12 +1,15 @@
+const btnCgNum = document.createElement('button');
+btnCgNum.textContent = "Change grid";
+document.body.insertBefore(btnCgNum, document.getElementById("container"));
+
 const container = document.getElementById("container");
 container.style.display = "flex";
 container.style.flexWrap = "wrap";
-container.style.width = "100%";
+container.style.width = "700px";
 container.style.aspectRatio = "1 / 1";
 let tempDoc = document.createDocumentFragment();
 for(let i=0; i<16;i++){
 let gridDiv = document.createElement('div');
-// gridDiv.style.flex = "1";
 gridDiv.style.width = "25%";
 gridDiv.style.height = "25%";
 gridDiv.style.margin = "-1px";
