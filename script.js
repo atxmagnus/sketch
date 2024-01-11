@@ -1,25 +1,46 @@
+function generateGrid() {
+    for (let i = 0; i < Math.pow(input, 2); i++) {
+        let gridDiv = document.createElement('div');
+        gridDiv.style.backgroundColor = "white";
+        gridDiv.style.width = 100 / input + "%";
+        gridDiv.style.height = 100 / input + "%";
+        gridDiv.style.margin = "-1px";
+        gridDiv.style.border = "1px solid magenta"
+        tempDoc.appendChild(gridDiv);
+        gridDiv.addEventListener("mouseover", function () {
+            gridDiv.style.backgroundColor = "magenta";
+        });
+    }
+    container.appendChild(tempDoc);
+
+};
+
+
+function removeChilds(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+
+
+let tempDoc = document.createDocumentFragment();
 const btnCgNum = document.createElement('button');
 btnCgNum.textContent = "Change grid";
 document.body.insertBefore(btnCgNum, document.getElementById("container"));
-
+let input = 8;
+btnCgNum.addEventListener('click', function () {
+    input = prompt("Enter the number of squares in the side:", 8);
+    removeChilds(container);
+    generateGrid();
+});
 const container = document.getElementById("container");
 container.style.display = "flex";
 container.style.flexWrap = "wrap";
 container.style.width = "700px";
 container.style.aspectRatio = "1 / 1";
-let tempDoc = document.createDocumentFragment();
-for(let i=0; i<16;i++){
-let gridDiv = document.createElement('div');
-gridDiv.style.width = "25%";
-gridDiv.style.height = "25%";
-gridDiv.style.margin = "-1px";
-gridDiv.style.border = "1px solid magenta"
-tempDoc.appendChild(gridDiv);
-gridDiv.addEventListener("mouseover", function () {
-gridDiv.style.backgroundColor = "magenta";
-});
-}
-container.appendChild(tempDoc);
+generateGrid();
+
+
 
 // Create a webpage with a 16x16 grid of square divs.
 
