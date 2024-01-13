@@ -29,7 +29,9 @@ btnCgNum.textContent = "Change grid";
 document.body.insertBefore(btnCgNum, document.getElementById("container"));
 let input = 8;
 btnCgNum.addEventListener('click', function () {
-    input = prompt("Enter the number of squares in the side:", 8);
+    input = prompt("Enter the number of squares in the side (100 at max):", 8);
+    if (input > 100)
+        input = 100;
     removeChilds(container);
     generateGrid();
 });
